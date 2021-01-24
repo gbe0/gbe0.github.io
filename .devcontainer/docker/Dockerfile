@@ -153,6 +153,16 @@ RUN echo \
 ## Switch to the VS Code user
 USER vscode
 
+## Install Jekyll
+RUN echo \
+      && DEBIAN_FRONTEND="noninteractive" sudo apt-get -q -y install \
+        ruby-full build-essential zlib1g-dev \
+      && echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc \
+      && echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc \
+      && echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc \
+      && source ~/.bashrc \
+      && gem install jekyll bundler
+
 ## Add the bash aliases file
 COPY .bash_aliases /home/vscode/.bash_aliases
 
