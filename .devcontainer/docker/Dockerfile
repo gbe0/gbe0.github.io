@@ -161,7 +161,9 @@ RUN echo \
       && echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc \
       && echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc \
       && source ~/.bashrc \
-      && gem install jekyll bundler
+      && gem install jekyll bundler \
+      ### Add optional gems for Jekyll
+      && gem install jekyll-compose jekyll-watch jekyll-sitemap jekyll-toc jekyll-seo-tag jekyll-sanity
 
 ## Add the bash aliases file
 COPY .bash_aliases /home/vscode/.bash_aliases
