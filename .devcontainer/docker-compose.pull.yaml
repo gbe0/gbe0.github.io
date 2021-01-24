@@ -1,0 +1,14 @@
+---
+
+# This Docker Compose file may be defined in ".devcontainer.json".
+# When using this compose file it will result in the Docker image being built from scratch
+# instead of pulling the pre-built image.
+
+version: '3.8'
+
+services:
+
+  ## Main development container
+  pages-vscode:
+    ### Pull the pre-built image
+    image: docker.pkg.github.com/gbe0/gbe0.github.io/vscode:latest

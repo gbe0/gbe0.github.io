@@ -1,0 +1,19 @@
+---
+
+# This Docker Compose file may be defined in ".devcontainer.json".
+# When using this compose file it will result in the Docker image being built from scratch
+# instead of pulling the pre-built image.
+
+version: '3.8'
+
+services:
+
+  ## Main development container
+  pages-vscode:
+    build:
+      context: ./docker
+      args:
+        ## Configure the settings for the VS Code user that will be created inside the container
+        ## These should match the settings for the account you run VS Code as
+        UID: 1000
+        GID: 1000
