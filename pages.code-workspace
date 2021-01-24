@@ -7,12 +7,6 @@
 	"settings": {
 		// Disable telemetry
 		"telemetry.enableTelemetry": false,
-		// Set GitLab config
-		"gitlab.instanceUrl": "https://git.remote.sx",
-    "gitlab.showPipelineUpdateNotifications": true,
-    "gitlab.pipelineGitRemoteName": "origin",
-    "gitlab.remoteName": "origin",
-    "gitlab.enableExperimentalFeatures": true,
 		// Use bundler
 		"ruby.useBundler": false,
 		// Configure Ruby extension to use the internal language server
@@ -24,8 +18,6 @@
 			}
 		},
 		// Use rubocop for formatting of Ruby
-		"ruby.format": "rubocop",
-		// Set JDK path for sonarlint
-		"sonarlint.ls.javaHome": "/usr/lib/jvm/java-11-openjdk-amd64"
+		"ruby.format": "rubocop"
 	}
 }
