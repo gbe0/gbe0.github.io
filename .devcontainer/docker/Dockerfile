@@ -114,7 +114,9 @@ RUN echo \
         ### Linting
         pylint autopep8 flake8 \
         ### Environments
-        pipenv
+        pipenv \
+      ## Install pelican and requirements
+      && python3 -m pip install pelican ghp-import Markdown
 
 ## Configure the user that VS Code will run as
 RUN echo \
@@ -140,19 +142,6 @@ RUN echo \
 
 ## Switch to the VS Code user
 USER vscode
-
-## Install Jekyll
-RUN echo \
-      && DEBIAN_FRONTEND="noninteractive" sudo apt-get -q -y install \
-        ruby-full build-essential zlib1g-dev \
-      && echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc \
-      && echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc \
-      && echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc \
-      && export GEM_HOME="$HOME/gems" \
-      && export PATH="$HOME/gems/bin:$PATH" \
-      && gem install jekyll bundler \
-      ### Add optional gems for Jekyll
-      && gem install jekyll-compose jekyll-watch jekyll-sitemap jekyll-toc jekyll-seo-tag jekyll-sanity
 
 ## Add the bash aliases file
 COPY .bash_aliases /home/vscode/.bash_aliases
