@@ -114,19 +114,7 @@ RUN echo \
         ### Linting
         pylint autopep8 flake8 \
         ### Environments
-        pipenv \
-        ### Configuration validation
-        cerberus \
-        ### Celery for task management
-        celery \
-        ### Django
-        Django django-environ python-decouple django-debug-toolbar asgiref pycodestyle pytz sqlparse gunicorn whitenoise \
-      ### Upgrade setuptools/wheel for building packages
-      && python3 -m pip install --upgrade \
-        setuptools wheel \
-      ### Upgrade twine for uploading packages
-      && python3 -m pip install --upgrade \
-        twine
+        pipenv
 
 ## Configure the user that VS Code will run as
 RUN echo \
