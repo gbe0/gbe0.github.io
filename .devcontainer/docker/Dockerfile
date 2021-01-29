@@ -152,7 +152,9 @@ RUN echo \
       && export PATH="$HOME/gems/bin:$PATH" \
       && gem install jekyll bundler \
       ### Add optional gems for Jekyll
-      && gem install jekyll-compose jekyll-watch jekyll-sitemap jekyll-toc jekyll-seo-tag jekyll-sanity
+      && gem install jekyll-compose jekyll-watch jekyll-sitemap jekyll-toc jekyll-seo-tag jekyll-sanity \
+      ### Add gems for Poole
+      && gem install jekyll-gist jekyll-sitemap jekyll-seo-tag jekyll-paginate
 
 ## Add the bash aliases file
 COPY .bash_aliases /home/vscode/.bash_aliases
