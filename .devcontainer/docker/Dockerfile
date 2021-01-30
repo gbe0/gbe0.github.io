@@ -114,7 +114,10 @@ RUN echo \
         ### Linting
         pylint autopep8 flake8 \
         ### Environments
-        pipenv
+        pipenv \
+      ### Requirements to build pages
+      && python3 -m pip install \
+        sphinx sphinx_rtd_theme autodoc recommonmark
 
 ## Configure the user that VS Code will run as
 RUN echo \
