@@ -80,7 +80,9 @@
     // Python autodocstring
     "njpwerner.autodocstring",
     // Python Pylance
-    "ms-python.vscode-pylance",
+		"ms-python.vscode-pylance",
+		// Restructured Text
+		"lextudio.restructuredtext",
 		// Ruby
 		"rebornix.ruby",
     // Ruby SolarGraph

@@ -117,7 +117,12 @@ RUN echo \
         pipenv \
       ### Requirements to build pages
       && python3 -m pip install \
-        sphinx sphinx_rtd_theme autodoc recommonmark
+        sphinx autodoc recommonmark sphinx-autobuild sphinxcontrib-runcmd sphinxcontrib-redirects sphinxcontrib-imageembed sphinxprettysearchresults tut  \
+        sphinx-gitstamp \
+      && python3 -m pip install \
+        git+https://github.com/bashtage/sphinx-material.git \
+      && python3 -m pip install \
+        git+https://github.com/sphinx-contrib/images
 
 ## Configure the user that VS Code will run as
 RUN echo \
